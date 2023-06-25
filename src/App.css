@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+
+.Nav ul{
+  display: flex;
+  justify-content: end;
+}
+
+.Nav li{
+  list-style-type: none;
+  padding: 10px;
+}
+.Nav a {
+  text-decoration: none;
+  /* color: white;  */
+}
+
+.Login a{
+  /* color: white; */
+  font-size: 13px;
+  padding: 10px;
+}
