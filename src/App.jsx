@@ -24,7 +24,8 @@ function App() {
 
         <Route path="/*" element={<Not_Found />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" elemenft={<Login />} />
+        {/* this is a test  */}
       </Routes>
     </>
   );
