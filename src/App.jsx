@@ -21,11 +21,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Protected Comp={Home}/>}/>
         <Route path="/about" element={<Protected Comp={About}/>} />
-
-        <Route path="/*" element={<Not_Found />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" elemenft={<Login />} />
-        {/* this is a test  */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<Not_Found />} />
+        {/* Test  */}
       </Routes>
     </>
   );

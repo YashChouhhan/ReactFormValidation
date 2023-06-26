@@ -14,15 +14,13 @@ const Validation = yup.object({
       "Password and Confirm Password should match"
     ),
 });
-
 const initialValues = {
   name: "",
   email: "",
-  number: "", 
+  number: "",
   password: "",
   con_password: "",
 };
-
 const SignUp = () => {
   const {
     values,
@@ -36,8 +34,7 @@ const SignUp = () => {
     validationSchema: Validation,
     onSubmit: (values, actions) => {
       const data = JSON.parse(localStorage.getItem("userData")) || [];
-      console.log("use data" , values)
-
+      console.log("use data", values)
       // Check email
       const existingUser = data.find((user) => user.email === values.email);
       if (existingUser) {
@@ -50,10 +47,10 @@ const SignUp = () => {
       actions.resetForm();
     },
   });
-
   return (
     <form onSubmit={handleSubmit} className="container mt-5">
       <div className="mb-3">
+        <h1 className="mb-4">Sign In</h1>
         <label htmlFor="name" className="form-label">
           Enter Your Name
         </label>
@@ -109,7 +106,7 @@ const SignUp = () => {
           <p className="error text-danger">{errors.number}</p>
         )}
       </div>
-
+      
       <div className="mb-3">
         <label htmlFor="password" className="form-label">
           Enter Password

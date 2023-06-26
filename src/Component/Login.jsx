@@ -1,12 +1,10 @@
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
-
 const Login = () => {
   const initialValues = {
     email: "",
     password: "",
   };
-
   const { values, handleSubmit, handleChange, handleBlur } = useFormik({
     initialValues: initialValues,
     onSubmit: (values, actions) => {
@@ -23,13 +21,12 @@ const Login = () => {
       actions.resetForm();
     },
   });
-
   return (
-    <div className="container">
+    <div className="container mt-5">
       <div className="Login">
-        <h1 className="mb-4">This is login</h1>
+        <h1 className="mb-4">login</h1>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
+          <div className="mb-3 ">
             <label className="form-label">Enter Email</label>
             <input
               type="email"
