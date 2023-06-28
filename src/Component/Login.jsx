@@ -1,26 +1,29 @@
 import { useFormik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const initialValues = {
     email: "",
     password: "",
   };
+  const navigate = useNavigate();
   const { values, handleSubmit, handleChange, handleBlur } = useFormik({
     initialValues: initialValues,
     onSubmit: (values, actions) => {
       const storedData = JSON.parse(localStorage.getItem("userData")) || [];
-      const matchingUser = storedData.find(
-        (user) =>
-          user.email === values.email && user.password === values.password
-      );
+      const matchingUser = storedData.find((user) => user.email === values.email && user.password === values.password);
+      console.log(matchingUser)
       if (matchingUser) {
+        localStorage.setItem("loggedIn",matchingUser.email);
         alert("Login successful");
+        navigate('/');
       } else {
         alert("Login failed");
       }
       actions.resetForm();
     },
   });
+
+  
   return (
     <div className="container mt-5">
       <div className="Login">

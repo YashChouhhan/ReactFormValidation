@@ -4,15 +4,15 @@ const Protected = (props) => {
   const { Comp } = props;
   const navigate = useNavigate();
   useEffect(() => {
-    const login = localStorage.getItem("userData");
-    if (login) {
+    const login = localStorage.getItem("loggedIn");
+    if (!login) {
       navigate("/login");
     }
   });
   return (
     <>
-    sdsfsfsf
-      <Comp />
+      <p>Test</p>
+      <Comp/>
     </>
   );
 };
